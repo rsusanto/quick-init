@@ -30,7 +30,7 @@ if [ ! -f "package.json" ]; then
 fi
 
 # Setup PHP-CS-Fixer.
-if [ ! -f "php-cs-fixer" ]; then
+if [ ! -f ".php-cs-fixer.php" ]; then
 	# curl -sL https://cs.symfony.com/download/php-cs-fixer-v3.phar -o php-cs-fixer
 	# chmod a+x php-cs-fixer
 	curl -sLO "$RES_PATH/.php-cs-fixer.php"
