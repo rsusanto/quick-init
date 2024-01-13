@@ -1,5 +1,5 @@
 #!/bin/sh
-RES_PATH="https://github.com/rsusanto/quick-init/raw/main/res"
+RES_PATH="https://github.com/rsusanto/quick-init/raw/main/files"
 
 DIR_NAME=$1
 if [ ! $DIR_NAME ]; then
@@ -10,7 +10,6 @@ fi
 # Enter the directory.
 mkdir -p $DIR_NAME
 cd $DIR_NAME
-
 
 # Setup git.
 if [ ! -d ".git" ]; then
@@ -23,7 +22,6 @@ fi
 # Setup NPM.
 if [ ! -f "package.json" ]; then
 	curl -sLO "$RES_PATH/package.json"
-	sed -i '' "s/\"name\":.*,$/\"name\": \"$DIR_NAME\",/" package.json
 	npm install --silent
 	echo "/node_modules" >> ".git/info/exclude"
 	echo "/package-lock.json" >> ".git/info/exclude"
